@@ -1,0 +1,119 @@
+/* Paletă inspirată de Harry Potter: pergament, aur și accente misterioase */
+:root {
+  --bg-light: #f5f0e6;        /* pergament deschis */
+  --bg-card: #fffaf0;         /* bej cald pentru carduri */
+  --accent: #8b0000;          /* roșu burgundy (Gryffindor) */
+  --accent-hover: #5c0000;    /* roșu mai închis */
+  --text-main: #2c2c2c;       /* text principal */
+  --text-muted: #6b6b6b;      /* text secundar */
+  --shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+body {
+  font-family: "Cinzel", "Georgia", serif; /* font cu aer medieval */
+  background-color: var(--bg-light);
+  margin: 0;
+  padding: 20px;
+  color: var(--text-main);
+}
+
+/* Titlu principal */
+h1 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 30px;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Zona de căutare */
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-box input[type="text"] {
+  padding: 12px;
+  width: 300px;
+  border: 2px solid var(--accent);
+  border-radius: 25px; /* colțuri rotunjite */
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 25px; /* colțuri rotunjite */
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-box button:hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.05);
+}
+
+/* Container rezultate */
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Card pentru fiecare carte */
+.book {
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* Coperta */
+.book img {
+  width: 120px;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 2px solid var(--accent);
+}
+
+/* Informații carte */
+.book-info {
+  text-align: center;
+}
+
+.book-info h3 {
+  font-size: 1.2rem;
+  margin: 0 0 8px;
+  color: var(--accent);
+}
+
+.book-info p {
+  margin: 4px 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Responsivitate */
+@media (max-width: 600px) {
+  .search-box input[type="text"] {
+    width: 100%;
+  }
+}
